@@ -32,7 +32,7 @@ public class AddLocationMapActivity extends MapActivity {
 	private MyLocationOverlay myLocationOverlay;
 
 	@Override
-	protected void onCreate(Bundle bundle) {
+	protected void onCreate(Bundle bundle) {  
 		super.onCreate(bundle);
 		setContentView(R.layout.add_location);
 		setUpViews();
@@ -57,6 +57,8 @@ public class AddLocationMapActivity extends MapActivity {
 	}
 	
 	protected void mapCurrentAddress() {
+
+		
 		String addressString = addressText.getText().toString();
 		Geocoder g = new Geocoder(this);
 		List<Address> addresses;
