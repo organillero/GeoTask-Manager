@@ -4,14 +4,12 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
-import org.androidtitlan.geotaskmanager.R;
 import org.androidtitlan.geotaskmanager.adapter.TaskListAdapter;
 import org.androidtitlan.geotaskmanager.tasks.Task;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ListActivity;
-import android.app.ProgressDialog;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -25,8 +23,6 @@ import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
@@ -44,12 +40,12 @@ public class ViewTasksActivity extends ListActivity implements LocationListener 
 	private Button removeButton;
 	private TextView locationText;
 	private ToggleButton localTasksToggle;
-	private LocationManager locationManager;
+	//private LocationManager locationManager;
 	private Location latestLocation;
-	private ProgressDialog pd;
-	private Thread searchAdress;
-	private List<Address> foundAdresses;
-	private String location;
+	//private ProgressDialog pd;
+	//private Thread searchAdress;
+	//private List<Address> foundAdresses;
+	//private String location;
 
 
 	@Override
@@ -183,12 +179,12 @@ public class ViewTasksActivity extends ListActivity implements LocationListener 
 	    builder.setMessage("You GPS seems to be disabled, do you want to enable it?")
 	           .setCancelable(false)
 	           .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-	               public void onClick(@SuppressWarnings("unused") final DialogInterface dialog, @SuppressWarnings("unused") final int id) {
+	               public void onClick(final DialogInterface dialog, final int id) {
 	                   launchGPSOptions(); 
 	               }
 	           })
 	           .setNegativeButton("No", new DialogInterface.OnClickListener() {
-	               public void onClick(final DialogInterface dialog, @SuppressWarnings("unused") final int id) {
+	               public void onClick(final DialogInterface dialog, final int id) {
 	                    dialog.cancel();
 	               }
 	           });
@@ -244,6 +240,7 @@ public class ViewTasksActivity extends ListActivity implements LocationListener 
 		           }
 		       });
 		AlertDialog alert = builder.create();
+		alert.show();
 	}
 
 

@@ -1,24 +1,18 @@
 package org.androidtitlan.geotaskmanager;
 
-import org.androidtitlan.geotaskmanager.R;
 import org.androidtitlan.geotaskmanager.tasks.Task;
 
-import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.location.Address;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.ViewAnimator;
 
 public class AddTaskActivity extends TaskManagerActivity{
 	private static final int REQUEST_CHOOSE_ADRESS = 0;
